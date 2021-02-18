@@ -1,0 +1,258 @@
+{
+    "type": "modal",
+    "title": {
+        "type": "plain_text",
+        "text": "My App",
+        "emoji": true
+    },
+    "submit": {
+        "type": "plain_text",
+        "text": "Submit",
+        "emoji": true
+    },
+    "close": {
+        "type": "plain_text",
+        "text": "Cancel",
+        "emoji": true
+    },
+    "blocks": [
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": ":mag: Search results for *Cata*"
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "*<fakeLink.toYourApp.com|Use Case Catalogue>*\nUse Case Catalogue for the following departments/roles..."
+            },
+            "accessory": {
+                "type": "static_select",
+                "action_id": "foo",
+                "placeholder": {
+                    "type": "plain_text",
+                    "emoji": true,
+                    "text": "Manage"
+                },
+                "options": [
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Edit it"
+                        },
+                        "value": "value-0"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Read it"
+                        },
+                        "value": "value-1"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Save it"
+                        },
+                        "value": "value-2"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "*<fakeLink.toYourApp.com|Customer Support - Workflow Diagram Catalogue>*\nThis resource was put together by members of..."
+            },
+            "accessory": {
+                "type": "static_select",
+                "action_id": "foo",
+                "placeholder": {
+                    "type": "plain_text",
+                    "emoji": true,
+                    "text": "Manage"
+                },
+                "options": [
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Manage it"
+                        },
+                        "value": "value-0"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Read it"
+                        },
+                        "value": "value-1"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Save it"
+                        },
+                        "value": "value-2"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "*<fakeLink.toYourApp.com|Self-Serve Learning Options Catalogue>*\nSee the learning and development options we..."
+            },
+            "accessory": {
+                "type": "static_select",
+                "action_id": "foo",
+                "placeholder": {
+                    "type": "plain_text",
+                    "emoji": true,
+                    "text": "Manage"
+                },
+                "options": [
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Manage it"
+                        },
+                        "value": "value-0"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Read it"
+                        },
+                        "value": "value-1"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Save it"
+                        },
+                        "value": "value-2"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "*<fakeLink.toYourApp.com|Use Case Catalogue - CF Presentation - [June 12, 2018]>*\nThis is presentation will continue to be updated as..."
+            },
+            "accessory": {
+                "type": "static_select",
+                "action_id": "foo",
+                "placeholder": {
+                    "type": "plain_text",
+                    "emoji": true,
+                    "text": "Manage"
+                },
+                "options": [
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Manage it"
+                        },
+                        "value": "value-0"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Read it"
+                        },
+                        "value": "value-1"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Save it"
+                        },
+                        "value": "value-2"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "*<fakeLink.toYourApp.com|Comprehensive Benefits Catalogue - 2019>*\nInformation about all the benfits we offer is..."
+            },
+            "accessory": {
+                "type": "static_select",
+                "action_id": "foo",
+                "placeholder": {
+                    "type": "plain_text",
+                    "emoji": true,
+                    "text": "Manage"
+                },
+                "options": [
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Manage it"
+                        },
+                        "value": "value-0"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Read it"
+                        },
+                        "value": "value-1"
+                    },
+                    {
+                        "text": {
+                            "type": "plain_text",
+                            "emoji": true,
+                            "text": "Save it"
+                        },
+                        "value": "value-2"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "actions",
+            "elements": [
+                {
+                    "type": "button",
+                    "action_id": "foo",
+                    "text": {
+                        "type": "plain_text",
+                        "emoji": true,
+                        "text": "Next 5 Results"
+                    },
+                    "value": "click_me_123"
+                }
+            ]
+        }
+    ]
+}

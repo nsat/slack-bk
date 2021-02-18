@@ -1,47 +1,44 @@
 use serde::{Deserialize, Serialize};
 
+pub mod blocks;
+pub mod composition;
+pub mod elements;
+
+use composition::Text;
+
 #[derive(Debug, Deserialize, Serialize)]
-pub struct SlackMessage {
-    #[serde(skip_serializing_if = "Option::is_none")]
+pub struct Message {
+    #[serde(default, skip_serializing_if = "Option::is_none")]
     pub text: Option<String>,
-    pub blocks: Vec<SlackBlock>,
+
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub blocks: Vec<blocks::Block>,
+
+    pub thread_ts: Option<String>,
+
+    #[serde(default = "default_mrkdwn")]
+    pub mrkdwn: bool,
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-#[serde(tag = "type", rename_all = "lowercase")]
-pub enum SlackBlock {
-    Section {
-        text: SlackText,
+pub struct Modal {
+    pub title: Text,
 
-        #[serde(skip_serializing_if = "Vec::is_empty")]
-        fields: Vec<SlackText>,
+    pub submit: Text,
+    pub close: Text,
 
-        #[serde(skip_serializing_if = "Option::is_none")]
-        accessory: Option<SlackAccessory>,
-    },
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub blocks: Vec<blocks::Block>,
+}
+
+fn default_mrkdwn() -> bool {
+    true
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-#[serde(tag = "type", content = "text")]
-pub enum SlackText {
-    #[serde(rename = "mrkdwn")]
-    Markdown(String),
-
-    #[serde(rename = "plain_text")]
-    #[allow(dead_code)]
-    PlainText(String),
-}
-
-#[derive(Debug, Deserialize, Serialize)]
-#[serde(tag = "type", rename_all = "lowercase")]
-pub enum SlackAccessory {
-    Image { image_url: String, alt_text: String },
-}
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+#[serde(rename_all = "lowercase")]
+pub enum Style {
+    Default,
+    Primary,
+    Danger,
 }
