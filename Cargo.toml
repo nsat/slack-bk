@@ -3,8 +3,15 @@ name = "slack-bk"
 version = "0.1.0"
 authors = ["Frankie Foston <frankie.foston@spire.com>"]
 edition = "2018"
+license = "MIT"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "Slack BlockKit API abstraction for Rust"
+repository = "https://github.com/nsat/slack-bk"
+readme = "./README.md"
+
+keywords = ["web", "api", "json", "serde", "serialization", "slack", "blockkit"]
+categories = ["api-bindings", "data-structures", "web-programming"]
+
 
 [dependencies]
 serde = {version = "1.0", features=["derive"]}
