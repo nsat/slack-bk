@@ -1,27 +1,29 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct SlackMessage {
     #[serde(skip_serializing_if = "Option::is_none")]
-    text: Option<String>,
-    blocks: Vec<SlackBlock>,
+    pub text: Option<String>,
+    pub blocks: Vec<SlackBlock>,
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(tag = "type", rename_all = "lowercase")]
-enum SlackBlock {
+pub enum SlackBlock {
     Section {
         text: SlackText,
+
         #[serde(skip_serializing_if = "Vec::is_empty")]
         fields: Vec<SlackText>,
+
         #[serde(skip_serializing_if = "Option::is_none")]
         accessory: Option<SlackAccessory>,
     },
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(tag = "type", content = "text")]
-enum SlackText {
+pub enum SlackText {
     #[serde(rename = "mrkdwn")]
     Markdown(String),
 
@@ -30,12 +32,11 @@ enum SlackText {
     PlainText(String),
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 #[serde(tag = "type", rename_all = "lowercase")]
-enum SlackAccessory {
+pub enum SlackAccessory {
     Image { image_url: String, alt_text: String },
 }
-
 
 #[cfg(test)]
 mod tests {
