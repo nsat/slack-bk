@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::Style;
+use crate::util::Style;
 
 #[derive(Debug, Deserialize, Serialize)]
 #[serde(tag = "type")]
@@ -10,6 +10,22 @@ pub enum Text {
 
     #[serde(rename = "plain_text")]
     PlainText(PlainText),
+}
+
+impl Text {
+    pub fn plain<S: Into<String>>(text: S) -> Self {
+        Self::PlainText(PlainText {
+            text: text.into(),
+            emoji: true,
+        })
+    }
+
+    pub fn markdown<S: Into<String>>(text: S) -> Self {
+        Self::Markdown(MarkdownText {
+            text: text.into(),
+            verbatim: false,
+        })
+    }
 }
 
 #[derive(Debug, Deserialize, Serialize)]

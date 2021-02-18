@@ -1,5 +1,5 @@
 use serde::de::DeserializeOwned;
-use slack_bk::{Message, Modal};
+use slack_bk::surfaces::{Message, Modal};
 use std::fs::File;
 
 fn from_file<T: DeserializeOwned>(file: &str) -> T {

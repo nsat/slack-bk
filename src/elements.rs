@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 
 use crate::composition::{self, Text};
-use crate::Style;
+use crate::util::Style;
 
 #[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "snake_case", tag = "type")]
