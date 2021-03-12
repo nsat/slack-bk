@@ -9,7 +9,7 @@ description = "Slack BlockKit API abstraction for Rust"
 repository = "https://github.com/nsat/slack-bk"
 readme = "./README.md"
 
-keywords = ["web", "api", "json", "serde", "serialization", "slack", "blockkit"]
+keywords = ["json", "serde", "serialization", "slack", "blockkit"]
 categories = ["api-bindings", "data-structures", "web-programming"]
 
 
