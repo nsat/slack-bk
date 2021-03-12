@@ -41,7 +41,7 @@ updated throughout the repository.
 
 ## [Unreleased]
 
-## v0.2.0
+## v0.1.0
 
 ### Added
 - Initial release of `slack-bk`
