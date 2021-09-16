@@ -28,7 +28,7 @@ pub enum Element {
     TimePicker(TimePicker),
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct Button {
     pub text: Text,
     pub action_id: String,
@@ -46,7 +46,7 @@ pub struct Button {
     pub confirm: Option<composition::ConfirmationDialog>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct CheckboxGroup {
     pub action_id: String,
     pub options: Vec<composition::Option>,
@@ -54,7 +54,7 @@ pub struct CheckboxGroup {
     pub confirm: Option<composition::ConfirmationDialog>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct DatePicker {
     pub action_id: String,
     pub placeholder: Option<Text>,
@@ -68,7 +68,7 @@ pub struct Image {
     pub alt_text: String,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct MultiStaticSelect {
     pub placeholder: Text,
     pub action_id: String,
@@ -87,7 +87,7 @@ pub struct MultiStaticSelect {
     pub max_selected_items: Option<usize>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct MultiExternalSelect {
     pub placeholder: Text,
     pub action_id: String,
@@ -104,7 +104,7 @@ pub struct MultiExternalSelect {
     pub max_selected_items: Option<usize>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct MultiUsersSelect {
     pub placeholder: Text,
     pub action_id: String,
@@ -119,7 +119,7 @@ pub struct MultiUsersSelect {
     pub max_selected_items: Option<usize>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct MultiConversationsSelect {
     pub placeholder: Text,
     pub action_id: String,
@@ -140,7 +140,7 @@ pub struct MultiConversationsSelect {
     pub filter: Option<composition::FilterAction>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct MultiChannelsSelect {
     pub placeholder: Text,
     pub action_id: String,
@@ -155,7 +155,7 @@ pub struct MultiChannelsSelect {
     pub max_selected_items: Option<usize>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct OverflowMenu {
     pub action_id: String,
     pub options: Vec<composition::Option>,
@@ -164,7 +164,7 @@ pub struct OverflowMenu {
     pub confirm: Option<composition::ConfirmationDialog>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct PlainTextInput {
     pub action_id: String,
 
@@ -187,7 +187,7 @@ pub struct PlainTextInput {
     pub dispatch_action_config: Option<composition::DispatchAction>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct RadioButtonGroup {
     action_id: String,
     options: Vec<composition::Option>,
@@ -195,7 +195,7 @@ pub struct RadioButtonGroup {
     confirm: Option<composition::ConfirmationDialog>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct StaticSelect {
     pub placeholder: Text,
     pub action_id: String,
@@ -211,7 +211,7 @@ pub struct StaticSelect {
     pub confirm: Option<composition::ConfirmationDialog>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct ExternalSelect {
     pub placeholder: Text,
     pub action_id: String,
@@ -226,7 +226,7 @@ pub struct ExternalSelect {
     pub confirm: Option<composition::ConfirmationDialog>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct UsersSelect {
     pub placeholder: Text,
     pub action_id: String,
@@ -238,7 +238,7 @@ pub struct UsersSelect {
     pub confirm: Option<composition::ConfirmationDialog>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct ConversationsSelect {
     pub placeholder: Text,
     pub action_id: String,
@@ -259,7 +259,7 @@ pub struct ConversationsSelect {
     pub filter: Option<composition::FilterAction>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct ChannelsSelect {
     pub placeholder: Text,
     pub action_id: String,
@@ -274,7 +274,7 @@ pub struct ChannelsSelect {
     pub response_url_enabled: bool,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct TimePicker {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub placeholder: Option<Text>,

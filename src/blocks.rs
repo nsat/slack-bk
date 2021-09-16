@@ -16,7 +16,7 @@ pub enum Block {
     Section(Section),
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct Actions {
     pub elements: Vec<elements::Element>,
 
@@ -31,7 +31,7 @@ pub enum ContextElement {
     Text(Text),
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct Context {
     pub elements: Vec<ContextElement>,
 
@@ -39,7 +39,7 @@ pub struct Context {
     pub block_id: Option<String>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct Divider {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub block_id: Option<String>,
@@ -99,7 +99,7 @@ pub struct Input {
     pub optional: bool,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct Section {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub text: Option<Text>,

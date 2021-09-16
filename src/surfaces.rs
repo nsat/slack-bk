@@ -21,7 +21,18 @@ fn default_mrkdwn() -> bool {
     true
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+impl Default for Message {
+    fn default() -> Self {
+        Self {
+            text: None,
+            blocks: Vec::new(),
+            thread_ts: None,
+            mrkdwn: true,
+        }
+    }
+}
+
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct Modal {
     pub title: Text,
 

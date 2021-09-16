@@ -41,6 +41,9 @@ updated throughout the repository.
 
 ## [Unreleased]
 
+### Added
+- Most types now derive `Default` to improve the ergonomics of constructing messages.
+
 ## v0.1.0
 
 ### Added

@@ -7,3 +7,9 @@ pub enum Style {
     Primary,
     Danger,
 }
+
+impl Default for Style {
+    fn default() -> Self {
+        Style::Default
+    }
+}
