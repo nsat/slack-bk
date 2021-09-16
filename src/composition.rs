@@ -28,7 +28,13 @@ impl Text {
     }
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+impl Default for Text {
+    fn default() -> Self {
+        Text::Markdown(Default::default())
+    }
+}
+
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct MarkdownText {
     pub text: String,
 
@@ -36,7 +42,7 @@ pub struct MarkdownText {
     pub verbatim: bool,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct PlainText {
     pub text: String,
 
@@ -44,7 +50,7 @@ pub struct PlainText {
     pub emoji: bool,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct ConfirmationDialog {
     pub title: Text,
     pub text: Text,
@@ -55,7 +61,7 @@ pub struct ConfirmationDialog {
     pub style: std::option::Option<Style>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct Option {
     pub text: Text,
     pub value: String,
@@ -67,18 +73,18 @@ pub struct Option {
     pub url: std::option::Option<String>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct OptionGroup {
     pub label: Text,
     pub options: Vec<Option>,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct DispatchAction {
     #[serde(default)]
     pub trigger_actions_on: Vec<String>,
 }
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Default)]
 pub struct FilterAction {
     #[serde(default)]
     pub include: Vec<String>,

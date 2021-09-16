@@ -33,8 +33,7 @@ fn main() {
                 block_id: None
             })
         ],
-        thread_ts: None,
-        mrkdwn: true,
+        ..Default::default()
     };
 
     serde_json::to_writer_pretty(std::io::stdout(), &message).unwrap();
