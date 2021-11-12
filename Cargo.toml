@@ -2,7 +2,7 @@
 name = "slack-bk"
 version = "0.1.1"
 authors = ["Frankie Foston <frankie.foston@spire.com>"]
-edition = "2018"
+edition = "2021"
 license = "MIT"
 
 description = "Slack BlockKit API abstraction for Rust"
